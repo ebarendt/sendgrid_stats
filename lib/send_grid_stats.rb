@@ -22,7 +22,9 @@ end
 sendgrid = SendGridStats.new
 stats = sendgrid.load_stats
 #print "stats: #{stats[0]}\n"
-#print "#{stats[0].keys}\n"
+print "Today:\n"
+deliveries = stats[0]["delivered"]
+print "#{deliveries} delivered\n"
 if stats[0]["bounces"]
   num_bounces = stats[0]["bounces"]
   print "#{num_bounces} bounces\n"
