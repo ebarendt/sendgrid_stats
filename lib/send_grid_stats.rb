@@ -1,5 +1,7 @@
 require 'sendgrid_toolkit'
 
+# Uses the Sendgrid Toolkit: https://github.com/freerobby/sendgrid_toolkit
+
 class SendGridStats
 
   def initialize
