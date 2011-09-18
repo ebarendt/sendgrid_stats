@@ -1,4 +1,5 @@
 require 'sendgrid_toolkit'
+require 'pp'
 
 # Uses the Sendgrid Toolkit: https://github.com/freerobby/sendgrid_toolkit
 
@@ -32,10 +33,10 @@ if stats[0]["bounces"]
   print "#{num_bounces} bounces\n"
   bounces = sendgrid.load_bounces
   bounces.each do |bounce|
-    email = bounces["email"]
-    status = bounces["status"]
-    reason = bounces["reason"]
-    created = bounces["created"]
+    email = bounce["email"]
+    status = bounce["status"]
+    reason = bounce["reason"]
+    created = bounce["created"]
     print """
 --------------------
 Bounced at: #{created}
